@@ -6,7 +6,7 @@ var GuestService = {
 		$.ajax({
 			type: 'POST',
 			contentType: 'application/json',
-			url: 'api/tasks/',
+			url: 'api/funcionarios/',
 			data: JSON.stringify(funcionarios),
 			success: function(addedfuncionarios) {
 				console.log('Guest created!');
@@ -21,7 +21,7 @@ var GuestService = {
 	remove: function(id, callback) {
 		$.ajax({
 			type: 'DELETE',
-			url: 'api/tasks/' + id,
+			url: 'api/funcionarios/' + id,
 			success: function(response) {
 				console.log('Guest deleted!');
 				callback(true);
@@ -36,7 +36,7 @@ var GuestService = {
 	getList: function(callback) {
 		$.ajax({
 			type: 'GET',
-			url: 'api/tasks/',
+			url: 'api/funcionarios/',
 			dataType: 'json',
 			success: function(list) {
 				callback(list);

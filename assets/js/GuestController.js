@@ -7,7 +7,7 @@ var GuestController = {
 	setForm: function () {
 		var form = document.querySelector('form');
 		form.addEventListener('submit', function(event) {
-			GuestController.addGuest(form );
+			GuestController.addFun(form );
 			//it is to avoid form submition
 			event.preventDefault();
 		});
@@ -25,7 +25,7 @@ var GuestController = {
 		GuestController.setFocus();
 	},
 	
-	addGuest: function(form) {
+	addFun: function(form) {
 		var funcionarios = {
 			nome: form.nome.value,
 			sobrenome:form.sobrenome.value,
