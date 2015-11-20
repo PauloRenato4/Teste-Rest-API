@@ -1,0 +1,193 @@
+
+
+#logo {
+	width:75px;
+	height:75px;
+	margin-top: 1px;
+
+
+}
+
+
+#facebook{
+	width:30px;
+	height:30px;
+	margin-top: 1px;
+}
+
+.imgLupa{
+
+	width:25px;
+	height:25px;
+	margin-left: 12px;
+}
+
+
+
+#table{
+
+	width: 100%;
+}
+
+#tableface{
+
+	width:103px;
+	 border:0px;
+	
+
+}
+
+#designerhome{
+	border-radius: 0px 0px 0px 10px;
+}
+
+#designerhomes{
+  border-radius: 0px 0px 10px 0px;
+}
+
+p{
+	font-size: 16px;
+}
+
+#clear{
+	clear:both;
+}	
+
+body{
+	font-size:11px;
+
+	font-family:Verdana, sans-serif;
+	color:#58595b;
+	margin:0px;
+	background-repeat:no-repeat;
+	background-position:top center;
+	background-color: white;
+}
+
+
+
+#topoicones{
+	width:163px;
+	text-align: right;
+	vertical-align: bottom;
+}
+	
+
+#site {
+	width:950px;
+	margin:0 auto;
+}
+#topo {
+	width:950px;
+	height:86px;
+	border-bottom:1px solid #d8d8d8;
+	
+}
+
+#menu{
+  text-align: center;
+}
+
+
+#menuInt {
+	float:left;
+	margin-left:5px;
+	margin-top:-3px;
+
+}
+#menuInt ul {
+	list-style: none;
+	padding:0;
+	margin-top:13px;
+}
+#menuInt ul li {
+	position:relative;
+float:left;
+width: 157.5px;
+
+
+}
+
+
+#meni ul li {
+	position:relative;
+float:left;
+width: 235px;
+
+
+
+}
+
+#menos ul li {
+	position:relative;
+float:left;
+width: 134.7px;
+
+
+}
+#menuInt ul li a{
+
+
+	color:#FFF;
+	font-size:12px;
+	text-decoration:none;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:14px;
+	padding-top:13px;
+	margin-left:-4px;
+  display:block;
+	background-color:#616161;
+
+}
+	
+}
+
+#menuInt ul li a.active{
+	color: #FFF;
+	background-color:#616161;
+
+	
+}
+
+
+/*faz p hover em cima dos menus quando passado o mouse*/
+#menu li a:hover{
+background:#333;
+color:#fff;
+}
+
+
+/*posição menu*/
+#menu li  ul{
+position:absolute;
+top:25px;
+left:0;
+background-color:#616161;
+display:none;
+
+}  
+
+#menu li:hover ul, .menu li.over ul{
+  display:block;
+}
+
+/*formata o sub menu*/
+#menu li ul li{   
+width:160px;
+text-align: center;
+}
+
+
+#meni li ul li{   
+width:235px;
+text-align: center;
+}
+
+#menos li ul li{   
+width:235px;
+text-align: center;
+}
+
+
+
