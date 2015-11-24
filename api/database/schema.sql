@@ -19,4 +19,4 @@ CREATE TABLE funcionarios (
 
 
 INSERT INTO funcionarios (id, nome, sobrenome, cpf, rg, nacionalidade, email, nascimento, idade, ddd, celular, sexo) VALUES
-(1, 'paulo','paschoal','12256685','12558''brasileiro','paulo@kaka','22/08/1994','15','35','3366854','M');
+(1, 'paulo','paschoal','12256685','12558','brasileiro','paulo@kaka','22/08/1994','15','35','3366854','M');

@@ -30,9 +30,25 @@ class HospitalService {
         return $db->funcionarios[$id];
     }
     
-    public static function add($newFuncionario) {
+    public static function add($funcionarioTask) {
         $db = ConnectionFactory::getDB();
-        $funcionario = $db->funcionarios->insert($newFuncionario);
+        $funcionario = $db->funcionarios->insert($funcionarioTask);
+        if($funcionario) {
+            $funcionario['nome'] = $updatedFuncionario['nome'];
+            $funcionario['sbrenome'] = $updatedFuncionario['sobrenome'];
+            $funcionario['cpf'] = $updatedFuncionario['cpf'];
+            $funcionario['rg'] = $updatedFuncionario['rg'];
+            $funcionario['nacionalidade'] = $updatedFuncionario['nacionalidade'];
+            $funcionario['email'] = $updatedFuncionario['email'];
+            $funcionario['nascimento'] = $updatedFuncionario['nascimento'];
+            $funcionario['idade'] = $updatedFuncionario['idade'];
+            $funcionario['ddd'] = $updatedFuncionario['ddd'];
+            $funcionario['celular'] = $updatedFuncionario['celular'];
+            $funcionario['sexo'] = $updatedFuncionario['sexo'];
+            
+            return $funcionario;
+        }
+        
         return $funcionario;
     }
     

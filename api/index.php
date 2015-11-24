@@ -27,16 +27,18 @@ $app->get('/funcionarios/:id', function($id) use ( $app ) {
     }
 });
 
-$app->post('/funcionarios/', function () use ( $app ) {
-	$db = getDB();
-	
-	$add = json_decode($app->request->getBody(), true);
-	$funcionario = $db->funcionarios->insert($add);
-	
-	$app->response->header('Content-Type', 'application/json');
-	echo json_encode($funcionario);
+$app->post('/funcionarios/', function() use ( $app ) {
+    $funcionarioJson = $app->request()->getBody();
+    $funcionarioTask = json_decode($funcionarioJson, true);
+    if($funcionarioTask) {
+        $funcionario = HospitalService::add($funcionarioTask);
+        echo "Funcionario {$funcionario['nome']} added";
+    }
+    else {
+        $app->response->setStatus(400);
+        echo "Malformat JSON";
+    }
 });
-
 
 $app->put('/funcionarios/', function() use ( $app ) {
     $funcionarioJson = $app->request()->getBody();
@@ -44,7 +46,7 @@ $app->put('/funcionarios/', function() use ( $app ) {
     
     if($updatedfuncionario && $updatedfuncionario['id']) {
         if(HospitalService::update($updatedfuncionario)) {
-          echo "Funvionario {$updatedfuncionario['nome']} updated";  
+          echo "Funcionario {$updatedfuncionario['nome']} updated";  
         }
         else {
           $app->response->setStatus('404');
@@ -57,30 +59,16 @@ $app->put('/funcionarios/', function() use ( $app ) {
     }
 });
 
-$app->delete('/funcionarios/:id', function($id) use ( $app ) { 
-	$db = getDB();
-	$response = "";
-	
-	$funcionario = $db->funcionarios()->where('id', $id);
-	
-	if($funcionario->fetch()) {
-		$result = $funcionario->delete();
-		$response = array(
-			'status' => 'true',
-			'message' => 'Guest deleted!'
-		);
-	}
-	else {
-		$response = array(
-			'status' => 'false',
-			'message' => 'Guest with $id does not exit'
-		);
-		$app->response->setStatus(404);
-	}
-	
-	$app->response()->header('Content-Type', 'application/json');
-	echo json_encode($response);
+$app->delete('/funcionarios/:id', function($id) use ( $app ) {
+    if(HospitalService::delete($id)) {
+      echo "Funcionario with id = $id was deleted";
+    }
+    else {
+      $app->response->setStatus('404');
+      echo "Task with id = $id not found";
+    }
 });
+	
 
 
 $app->run();
