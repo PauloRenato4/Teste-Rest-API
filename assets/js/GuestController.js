@@ -45,7 +45,6 @@ var GuestController = {
 		});
 	},
 	
-	
 	showList: function () {
 		GuestService.getList(function(list) {
 			list.forEach(function(funcionarios) {
